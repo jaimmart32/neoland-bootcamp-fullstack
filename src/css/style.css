@@ -1,0 +1,25 @@
+table{
+    background-color: aqua;
+    th{
+        text-transform: uppercase;
+    }
+    thead{
+        background-color: chartreuse;
+    }
+    tbody{
+        background-color: blueviolet;
+    }
+    tfoot{
+        background-color: orange;
+    }
+}
+
+input:invalid,
+        textarea:invalid{
+            background-color: ivory;
+            outline: 2px solid red;
+        }
+        textarea{
+            display: block;
+            width: 100%;
+        }
