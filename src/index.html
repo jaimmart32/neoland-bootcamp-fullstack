@@ -3,71 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noticia</title>
+    <title>Inicio</title>
+    <style>
+        table{
+            background-color: aqua;
+            th{
+                text-transform: uppercase;
+            }
+            thead{
+                background-color: chartreuse;
+            }
+            tbody{
+                background-color: blueviolet;
+            }
+            tfoot{
+                background-color: orange;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Blog de noticias</h1>
         <ol>
             <li><a href="/">Volver al inicio</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
         </ol>
     </header>
-    <article>
-        <h1>Kiev lanza el mayor ataque aéreo de la guerra contra Rusia: al menos tres muertos</h1>
-        <h2>Las defensas antiaéreas rusas derribaron la pasada noche 337 drones sobre el territorio de su país.</h2>
-
-        <p>Las defensas antiaéreas rusas derribaron la pasada noche 337 drones sobre el territorio de país, incluida 
-            las afueras de Moscú, en el mayor ataque ucraniano desde el comienzo de la invasión rusa en Ucrania, según 
-            ha informado este martes el Ministerio de Defensa de Rusia en su canal de Telegram.</p>
-        <figure>
-            <img src="img/_95767811_efdc6e85-81eb-4d0a-8c71-543d1f9f97fd.jpg.webp" alt="Imagen-bomba" title="explosion en Rusia">
-            <figcaption>Explosion en Rusia al destruir varios drones</figcaption>
-        </figure>
-        <!--<p>Explosion en Rusia al destruir drones.</p>-->
-
-        <p>Como consecuencia del ataque, al menos tres personas han muerto y una decena han resultado heridas, según recoge 
-            la agencia TASS. El gobernador de Moscú, Andréi Vorobiov, ha confirmado el balance provisional de víctimas, 
-            indicando que los afectados se encontraban en las localidades de Dinoye, a unos tres kilómetros al sur de la capital, 
-            y de Yam, a unos ocho kilómetros, según un comunicado publicado en su canal de Telegram.</p>
-        
-        <p>Según el mando militar, del total de drones derribados la pasada noche 126 fueron destruidos sobre la región de Kursk, 
-            donde las tropas rusas intentan expulsar a las fuerzas ucranianas que controlan parte de su territorio desde agosto del 
-            año pasado. Los demás aparatos no tripulados fueron abatidos sobre las regiones Briansk (38), Bélgorod (25), Riazn (22), 
-            Kaluga (10), Lípetsk (8) Oriol (8) Voronezh (6) y Nizhni Nóvgorod (3).</p>
-        <p><a href="#">Enlace a noticia relacionada</a></p>
-
-        <blockquote>
-
-            <cite><a href="https://github.com/isorna/proyecto-neoland" target="_blank">Alvaro Isorna</a></cite>
-        </blockquote>
-        <p>11.03.2025 - 10:34h</p>
-
+    <main>
+        <h1>Listado de noticias</h1>
         <ol>
-            <li><a href="404.html" title="enlace a otra noticia"></a><img src="img/90x90.svg" alt="galeria 1"></li>
-            <li><a href="404.html" title="enlace a otra noticia"></a><img src="img/90x90.svg" alt="galeria 2"></li>
-            <li><a href="404.html" title="enlace a otra noticia"></a><img src="img/90x90.svg" alt="galeria 3"></li>
-            <li><a href="404.html" title="enlace a otra noticia"></a><img src="img/90x90.svg" alt="galeria 4"></li>
+            <li><a href="noticia.html">Noticia principal</a></li>
+            <li><a href="noticia.html">Noticia secundaria</a></li>
+            <li><a href="noticia.html">Tercera noticia</a></li>
         </ol>
+        <table border="1" cellspacing="0">
+            <caption>Listado de noticias</caption>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Titular</th>
+                    <th>Resumen</th>
+                    <th>Visitas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="img/90x90.svg" alt=""></td>
+                    <th><a href="noticia.html">Titular de la noticia</a></td>
+                    <td>Resumen de la noticia</td>
+                    <td>10.000</td>
+                </tr>
+                <tr>
+                    <td><img src="img/90x90.svg" alt=""></td>
+                    <th><a href="noticia.html">Titular de la noticia</a></td>
+                    <td>Resumen de la noticia</td>
+                    <td>10.000</td>
+                </tr>
+                <tr>
+                    <td><img src="img/90x90.svg" alt=""></td>
+                    <th><a href="noticia.html">Titular de la noticia</a></td>
+                    <td>Resumen de la noticia</td>
+                    <td>10.000</td>
+                </tr>
+                <tr>
+                    <td><img src="img/90x90.svg" alt=""></td>
+                    <th><a href="noticia.html">Titular de la noticia</a></td>
+                    <td>Resumen de la noticia</td>
+                    <td>10.000</td>
+                </tr>
+                
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="3">total:</th>
+                    <td>1.000.000</td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
 
-        <section>
-            <h2>Comentarios</h2>
-            <ul>
-                <li>Que tragedia, deseo lo mejor y que termine la guerra cuanto antes.</li>
-                <li>Soy ruso y estoy acostumbrado al frio</li>
-                <li>La imagen de la noticia podria estar mas definida, la verdad.</li>
-            </ul>
-        </section>
-        
-    </article>
-    <aside>
-        <form action="nuevo-comentrario">
-            <h2>Añade un comentario</h2>
-            <input type="text" name="comentario" id="comentario">
-            <button>Enviar comentario</button>
-        </form>
-    </aside>
     <footer>
-        <h2>Noticias relacionadas</h2>
+        <h2>Paginas relacionadas</h2>
         <ul>
             <li><a href="404.html">Noticia relacionada</a></li>
             <li><a href="404.html">Noticia relacionada</a></li>
