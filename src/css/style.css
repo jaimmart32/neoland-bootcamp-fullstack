@@ -1,3 +1,33 @@
+/*HOJA DE ESTILOS GENERAL DE LA PÁGINA
+- TIPOGRAFÍAS
+- COLORES*/
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 20px;
+    line-height: 28px;
+
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: "Big Shoulders Stencil", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        font-size: 3em;
+        line-height: 1.2em;
+        letter-spacing: -1px;
+    }
+}
+
+
+
+
+
+/*
 table{
     background-color: aqua;
     th{
@@ -23,3 +53,4 @@ input:invalid,
             display: block;
             width: 100%;
         }
+*/
