@@ -2,3 +2,46 @@
 HOJA DE ESTILOS PARA ESCRITORIO (MIN-WIDTH: 481PX)
 - DISPOSICIÓN
 */
+
+body{
+    header,footer{
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    form{
+        margin: 20px auto;
+        width: 60%;
+        padding: 20px;
+        label{
+            display: block;
+        }
+        #permitir-notificacion{
+            display: inline;
+        }
+        textarea{
+            width: 98%;
+        }
+    }
+
+    table{
+        margin: 0 auto;
+        width: 95%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        
+        td,th{
+            vertical-align: top;
+            text-align: center;
+        }
+        td img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        td:has(img){
+            padding: 3px;
+            border: none;
+        }
+    }
+}

@@ -5,44 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suscribirse</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.mobile.css" media="screen and (max-width: 480px)">
+    <link rel="stylesheet" href="css/styles.desktop.css" media="screen and (min-width: 481px)">
 </head>
 <body>
     <header>
         <h1>Blog de noticias</h1>
         <ol>
-            <li><a href="index.html">Volver al inicio</a></li>
-            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="index.html">Home</a></li>
         </ol>
     </header>
     <main>
         <form action="#">
-            <h1>Suscribete:</h1>
-            <p>Por favor, rellena los campos del formulario para suscribirte a nuestro periódico</p>
+            <h1>Suscribete :</h1>
+            <p>Por favor, rellena los campos del formulario para suscribirte a nuestro periódico.</p>
             <fieldset>
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" minlength="2" required>
-                <label for="apellido">Apellido</label>
+            </fieldset>
+            <fieldset>
+                <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" minlength="2" required>
+            </fieldset>
             </fieldset>    
             <fieldset>
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </fieldset>
             <fieldset>
-                <label for="password">Contraseña</label>
+                <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" minlength="8" pattern="^[^@]{8,30}$" required>
             </fieldset>
             <fieldset>
-                <label for="edad">Edad</label>
+                <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" min="5" max="140" required>
             </fieldset>
             <fieldset>
-                <label for="notificar">Permitir recibir notificaciones del periódico</label>
+                <label for="notificar" id="permitir-notificacion">Permitir recibir notificaciones del periódico</label>
                 <input type="checkbox" id="notificar" name="notificar">
             </fieldset>
             <fieldset>
-                <label for="descripcion">Descripcion(opcional)</label>
+                <label for="descripcion">Descripcion(opcional):</label>
                 <textarea name="descripcion" id="descripcion" placeholder="Escribe una descripción sobre ti." rows="7" cols="30"></textarea>
             </fieldset>
             <button type="reset">Resetear</button>

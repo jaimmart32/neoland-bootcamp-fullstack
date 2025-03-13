@@ -6,4 +6,18 @@ HOJA DE ESTILOS PARA MÓVILES
 
 body{
     font-size: 16px;
+
+    table{
+        width: 100%;
+        tr{
+            width: 100%;
+            th:nth-child(3),
+            th:nth-child(4),
+            td:nth-child(3),
+            td:nth-child(4){
+                display: none;
+            }
+        }
+
+    }
 }
