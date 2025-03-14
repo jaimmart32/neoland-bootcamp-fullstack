@@ -9,9 +9,34 @@ body{
         text-align: center;
     }
 
+    article{
+        h1,h2{
+            margin: 20px;
+            text-align: justify;
+        }
+        p{
+            margin: 20px;
+            text-align: justify;
+        }
+        a{
+            display: block;
+        }
+        time{
+            margin: 20px;
+        }
+        img{
+            display: block;
+            margin: 10px auto;
+        }
+        figcaption{
+            text-align: center;
+        }
+    }
+
     form{
         margin: 20px auto;
         width: 60%;
+        max-width: 600px;
         padding: 20px;
         label{
             display: block;
@@ -21,6 +46,49 @@ body{
         }
         textarea{
             width: 98%;
+        }
+    }
+    .comentarios{
+        margin: 20px auto;
+        width: 60%;
+        max-width: 600px;
+        padding: 20px;
+
+        h2{
+            text-align: center;
+        }
+
+        .comentario{
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            display: flex; /*Flex, echar un ojo*/
+            justify-content: space-between;
+            align-items: center;
+            
+
+            .comentario-user{
+                padding: 5px;
+                margin: 10px;
+            }
+            .texto-comentario{
+                text-align: justify;
+                padding: 5px;
+                margin: 10px;
+            }
+        }
+    }
+
+    .add-comentario{
+        margin: 20px auto;
+        width: 60%;
+        max-width: 600px;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+
+        h2{
+            text-align: center;
         }
     }
 

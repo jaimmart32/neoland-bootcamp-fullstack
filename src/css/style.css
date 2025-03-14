@@ -25,7 +25,7 @@ body{
         box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
     }
 
-    /*Titulares, inputs,botonesy links*/
+    /*Titulares, parrafos, inputs, botones y links*/
     h1,h2,h3,h4,h5,h6{
         font-family: "Big Shoulders Stencil", sans-serif;
         font-optical-sizing: auto;
@@ -40,6 +40,17 @@ body{
     h2{
         font-size: 1.5em;
     }
+
+    article{
+        p{
+            &::first-letter {
+                font-size: 1.75em;
+            }
+        }
+        img{
+            box-shadow: 10px 5px 5px rgb(3, 3, 0);
+        }
+    } 
 
     button{
         font-family: "Big Shoulders Stencil", sans-serif;
@@ -114,8 +125,49 @@ body{
         background-color: rgb(90, 90, 60);
         border-radius: 10px;
         box-shadow: 10px 5px 5px rgb(3, 3, 0);
+
+        *:required::placeholder{
+            color: #D4AF37;
+            font-style: italic;
+        }
         fieldset{
             /*border: 2px solid #866f24*/
+        }
+
+    }
+    .comentarios{
+        color: white;
+        background-color: rgb(90, 90, 60);
+        border-radius: 10px;
+        box-shadow: 10px 5px 5px rgb(3, 3, 0);
+
+        h2{
+            font-size: 2em;
+        }
+        .comentario{
+            background-color: #2F4F4F;
+            color: #F5F5F5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+            .comentario-user{
+                color: rgb(0, 0, 0);
+                background-color: rgb(255, 255, 255);
+                border-radius: 10px;
+            }
+            .texto-comentario{
+                color: rgb(252, 252, 252);
+                background-color: rgb(87, 8, 8);
+                border-radius: 10px;
+            }
+        }
+    }
+    .add-comentario{
+        textarea{
+            height: 80px;
+            border-radius: 10px;
+        }
+        button{
+            font-size: 1em;
         }
     }
 }
