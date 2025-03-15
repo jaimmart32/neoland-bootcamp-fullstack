@@ -13,12 +13,26 @@ body{
 
     /*Header y footer*/
     header{
-        background-color: #2F4F4F;
-        color: #F5F5F5;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        .cabecera{
+            background-image: url('../img/militares.jpg');
+            background-size: cover;
+            background-position: center -510px;
+            background-repeat: no-repeat;
+            color: #F5F5F5;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            height: 200px;
+        }
+        .nav-bar{
+            background-color: #2F4F4F;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
     }
     footer{
-        background-color: #2F4F4F;
+        background-image: url('../img/camuflaje.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         color: #F5F5F5;
         box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
     }
@@ -57,17 +71,25 @@ body{
         color: #D4AF37;
         cursor: pointer;
         font-size: 1.5em;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
 
         &:hover{
             background-color: #D4AF37;
             color: #F5F5F5;
+            transform: scale(1.1);
         }
     }
     input, textarea{
         font-family: "Courier Prime", monospace;
-    font-weight: 400;
-    font-style: italic;
-    border-color: #8B0000;
+        font-weight: 400;
+        font-style: italic;
+        border-color: #8B0000;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus{
+            border-color: #D4AF37;
+            box-shadow: 0 0 8px #D4AF37;
+        }
     }
     a{
         font-family: "Roboto", sans-serif;
@@ -78,9 +100,10 @@ body{
         "wdth" 100;
         color: #D4AF37;
         text-decoration: none;
+        transition: color 0.3s ease, font-size 0.3s ease;
 
         &:hover{
-            color: #866f24;
+            color: #ffd344;
             font-size: 1.1em;
             text-decoration: underline;
         }
@@ -163,35 +186,3 @@ body{
         }
     }
 }
-
-
-
-
-
-/*
-table{
-    background-color: aqua;
-    th{
-        text-transform: uppercase;
-    }
-    thead{
-        background-color: chartreuse;
-    }
-    tbody{
-        background-color: blueviolet;
-    }
-    tfoot{
-        background-color: orange;
-    }
-}
-
-input:invalid,
-        textarea:invalid{
-            background-color: ivory;
-            outline: 2px solid red;
-        }
-        textarea{
-            display: block;
-            width: 100%;
-        }
-*/

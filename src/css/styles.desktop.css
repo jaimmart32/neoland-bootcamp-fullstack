@@ -14,10 +14,6 @@ body{
         width: 100%;
     }
 
-    h1,h2,h3,h4,h5,h6{
-        /*margin-bottom: 10px;*/
-    }
-
     /* ARTÍCULO Y NOTICIAS */
     article{
         display: flex;
@@ -110,7 +106,7 @@ body{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 60%;
+        width: 100%;
         max-width: 600px;
         padding: 20px;
         text-align: center;
@@ -151,6 +147,6 @@ body{
     }
 }
 
-/*TODO: poner imagen militar de fondo en footer y header, hacer mas ancho el form 
-de añadir comentario, ver como mejorar form de suscripción, ver que hacer con los
+/*TODO:  hacer mas ancho el form de añadir comentario, ver como mejorar form de 
+suscripción, ver que hacer con los
 espacios laterales de las paginas.*/
