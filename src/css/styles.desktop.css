@@ -4,42 +4,62 @@ HOJA DE ESTILOS PARA ESCRITORIO (MIN-WIDTH: 481PX)
 */
 
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     header,footer{
         padding: 20px 0;
         text-align: center;
+        width: 100%;
     }
 
+    h1,h2,h3,h4,h5,h6{
+        /*margin-bottom: 10px;*/
+    }
+
+    /* ARTÍCULO Y NOTICIAS */
     article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1600px;
+        width: 100%;
+        gap: 15px;
+
         h1,h2{
-            margin: 20px;
             text-align: justify;
         }
         p{
             margin: 20px;
             text-align: justify;
         }
-        a{
-            display: block;
-        }
         time{
             margin: 20px;
         }
         img{
             display: block;
-            margin: 10px auto;
+            margin: auto;
+            max-width: 100%;
         }
         figcaption{
             text-align: center;
         }
     }
 
+    /* FORMULARIOS(SUSCRIPCIÓN Y COMENTARIOS) */
     form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 20px auto;
         width: 60%;
-        max-width: 600px;
+        max-width: 800px;
         padding: 20px;
+        gap: 15px;
         label{
             display: block;
+            margin-bottom: 5px;
         }
         #permitir-notificacion{
             display: inline;
@@ -48,23 +68,29 @@ body{
             width: 98%;
         }
     }
+
+    /* SECCIÓN DE COMENTARIOS */
     .comentarios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 20px auto;
         width: 60%;
         max-width: 600px;
         padding: 20px;
+        gap: 15px;
 
         h2{
             text-align: center;
         }
 
         .comentario{
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-            display: flex; /*Flex, echar un ojo*/
+            display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+            gap: 10px;
+            /*width: 100%;*/
             
 
             .comentario-user{
@@ -75,31 +101,42 @@ body{
                 text-align: justify;
                 padding: 5px;
                 margin: 10px;
+                flex-grow: 1;
             }
         }
     }
 
     .add-comentario{
-        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 60%;
         max-width: 600px;
         padding: 20px;
-        align-items: center;
         text-align: center;
-
-        h2{
-            text-align: center;
-        }
+        gap: 15px;
     }
 
+    /* LISTADO DE NOTICIAS */
     table{
-        margin: 0 auto;
+        display: table;
         width: 95%;
         border-collapse: collapse;
         margin-bottom: 15px;
         
+        thead,tbody,tfoot{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        tr{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
         td,th{
-            vertical-align: top;
+            flex: 1;/*Echar un ojo a flex-grow*/
+            padding: 8px;
             text-align: center;
         }
         td img{
@@ -113,3 +150,7 @@ body{
         }
     }
 }
+
+/*TODO: poner imagen militar de fondo en footer y header, hacer mas ancho el form 
+de añadir comentario, ver como mejorar form de suscripción, ver que hacer con los
+espacios laterales de las paginas.*/

@@ -15,13 +15,11 @@ body{
     header{
         background-color: #2F4F4F;
         color: #F5F5F5;
-        padding: 20px 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     footer{
         background-color: #2F4F4F;
         color: #F5F5F5;
-        padding: 15px 0;
         box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
     }
 
@@ -35,7 +33,6 @@ body{
         line-height: 1.2em;
         letter-spacing: -1px;
         text-shadow: 2px 2px 0px #720000, -2px -2px 0px #720000, 2px -2px 0px #720000, -2px 2px 0px #720000;
-        margin-bottom: 10px;
     }
     h2{
         font-size: 1.5em;
@@ -94,7 +91,6 @@ body{
 
         th,td{
             border: 2px solid #113813;
-            padding: 8px;
         }
         thead th{
             background-color: #4B5320;
@@ -110,7 +106,6 @@ body{
         }
         caption{
             font-weight: bold;
-            margin-bottom: 10px;
         }
         a{
             &:hover{
@@ -129,9 +124,6 @@ body{
         *:required::placeholder{
             color: #D4AF37;
             font-style: italic;
-        }
-        fieldset{
-            /*border: 2px solid #866f24*/
         }
 
     }
