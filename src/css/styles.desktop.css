@@ -102,6 +102,9 @@ body{
         }
     }
 
+    .aside-add-comentario{
+        width: 100%;
+    }
     .add-comentario{
         display: flex;
         flex-direction: column;
