@@ -13,6 +13,9 @@ body{
         text-align: center;
         width: 100%;
     }
+    .cabecera{
+        height: 250px;   
+    }
 
     /* ARTÍCULO Y NOTICIAS */
     article{
@@ -25,13 +28,14 @@ body{
 
         h1,h2{
             text-align: justify;
+            padding: 20px;
         }
         p{
-            margin: 20px;
+            padding: 20px;
             text-align: justify;
         }
         time{
-            margin: 20px;
+            padding: 20px;
         }
         img{
             display: block;

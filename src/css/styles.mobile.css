@@ -4,8 +4,89 @@ HOJA DE ESTILOS PARA MÓVILES
 - Ajuste tipografia moviles
 */
 
+/*Asegurar que los botones y enlaces tienen una altura de 40px para poder tocar 
+con el dedo*/
 body{
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header,footer{
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+    }
+    .cabecera{
+        height: 100px;
+    }
+
+    /*Usabilidad del dedo en disp. moviles*/
+    a, form #permitir-notificacion{
+        line-height: 40px;
+    }
+
+    /* ARTÍCULO Y NOTICIAS */
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+
+        h1,h2{
+            margin: 20px;
+            text-align: justify;
+        }
+        p{
+            margin: 20px;
+            text-align: justify;
+        }
+        time{
+            margin: 20px;
+        }
+        img{
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+        figcaption{
+            text-align: center;
+        }
+    }
+
+    /* LISTADO DE NOTICIAS */
+    table{
+        display: table;
+        width: 95%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        
+        thead,tbody,tfoot{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        tr{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        td,th{
+            flex: 1;/*Echar un ojo a flex-grow*/
+            padding: 8px;
+            text-align: center;
+        }
+        td img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        td:has(img){
+            padding: 3px;
+            border: none;
+        }
+    }
 
     table{
         width: 100%;
@@ -19,5 +100,76 @@ body{
             }
         }
 
+    }
+
+    /* FORMULARIOS(SUSCRIPCIÓN Y COMENTARIOS) */
+    form{
+        border-radius: 0%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+
+        gap: 15px;
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+        #permitir-notificacion{
+            display: inline;
+        }
+        textarea{
+            width: 98%;
+        }
+    }
+
+    /* SECCIÓN DE COMENTARIOS */
+    .comentarios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 600px;
+        padding: 20px;
+        gap: 15px;
+
+        h2{
+            text-align: center;
+        }
+
+        .comentario{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 10px;
+            /*width: 100%;*/
+            
+
+            .comentario-user{
+                padding: 5px;
+                margin: 10px;
+            }
+            .texto-comentario{
+                text-align: justify;
+                padding: 5px;
+                margin: 10px;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .comentarios{
+        border-radius: 0%;
+    }
+
+    .aside-add-comentario{
+        width: 100%;
     }
 }

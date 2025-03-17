@@ -14,13 +14,12 @@ body{
     /*Header y footer*/
     header{
         .cabecera{
-            background-image: url('../img/militares.jpg');
+            background-image: url('../img/militares-crop.jpg');
             background-size: cover;
-            background-position: center -510px;
+            background-position-y: bottom;/*center -510px;*/
             background-repeat: no-repeat;
             color: #F5F5F5;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            height: 200px;
         }
         .nav-bar{
             background-color: #2F4F4F;
@@ -171,7 +170,7 @@ body{
             }
             .texto-comentario{
                 color: rgb(252, 252, 252);
-                background-color: rgb(87, 8, 8);
+                /* background-color: rgb(87, 8, 8); */
                 border-radius: 10px;
             }
         }
