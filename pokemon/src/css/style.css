@@ -2,241 +2,155 @@
 - TIPOGRAFÍAS
 - COLORES*/
 
-html{
-    --main-color: #3B4C2C;
-    --header-bg-color: #2F4F4F;
-    --light-color: rgb(255, 255, 255);
-    --light-color-2: #c0c0c0;
-    --contrast-color: #8B0000;
-    --t-shadow-color: #720000;
-    --table-color: #113813;
-    --table-color-2: #4B5320;
-    --table-color-3: #6c772e;
-    --form-color: rgb(90, 90, 60);
-    --link-color: #D4AF37;
-    --link-color-2: #ffd344;
-
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --box-shadow-2: 10px 5px 5px rgb(3, 3, 0);
-    --border-radius: 10px;
+:root{
+    --b-color: black;
+    --w-color: white;
+    --type-green: green;
+    --type-purple: purple;
+    --border-radius: 4px;
 }
 
 body{
-    font-family: "Courier Prime", monospace;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-    color: var(--light-color-2);
-    line-height: 28px;
-    background-color: var(--main-color);
+    
+    menu{
 
-    /*Header y footer*/
-    header{
-        .cabecera{
-            background-image: url('../img/militares-crop.jpg');
-            background-size: cover;
-            background-position-y: bottom;
-            background-repeat: no-repeat;
-            color: var(--light-color);
-            box-shadow: var(--box-shadow);
+        li{
+            list-style: none;
         }
-        .nav-bar{
-            background-color: var(--header-bg-color);
-            box-shadow: var(--box-shadow);
-        }
-        
-    }
-    footer{
-        background-image: url('../img/camuflaje.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        color: var(--light-color);
-        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
-    }
 
-    /*Titulares, parrafos, inputs, botones y links*/
-    h1,h2,h3,h4,h5,h6{
-        font-family: "Big Shoulders Stencil", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 900;
-        font-style: normal;
-        font-size: 3em;
-        line-height: 1.2em;
-        letter-spacing: -1px;
-        text-shadow: 2px 2px 0px var(--t-shadow-color), -2px -2px 0px var(--t-shadow-color), 2px -2px 0px var(--t-shadow-color), -2px 2px 0px var(--t-shadow-color);
-    }
-    h2{
-        font-size: 1.5em;
-    }
+        .nav-inicio{
+            background-color: grey;
+        }
+        .nav-poke{
+            background-color: red;
+        }
+        .nav-juegos{
+            background-color: orange;
+        }
+        .nav-cartas{
+            background-color: yellow;
+        }
+        .nav-dibujos{
+            background-color: green;
+        }
+        .nav-eventos{
+            background-color: lightblue;
+        }
+        .nav-noticias{
+            background-color: blue;
+        }
 
-    article{
-        p{
-            &::first-letter {
-                font-size: 1.75em;
-            }
-        }
-        img{
-            box-shadow: var(--box-shadow);
-        }
-    } 
-
-    button{
-        font-family: "Big Shoulders Stencil", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
-        color: var(--link-color);
-        cursor: pointer;
-        font-size: 1.5em;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
-
-        &:hover{
-            background-color: var(--link-color);
-            color: var(--light-color);
-            transform: scale(1.1);
-        }
-    }
-    input, textarea{
-        font-family: "Courier Prime", monospace;
-        font-weight: 400;
-        font-style: italic;
-        border-color: var(--contrast-color);
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-        &:focus{
-            border-color: var(--link-color);
-            box-shadow: 0 0 8px var(--link-color);
-        }
-    }
-    a{
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        font-variation-settings:
-        "wdth" 100;
-        color: var(--link-color);
-        text-decoration: none;
-        transition: color 0.3s ease, font-size 0.3s ease;
-
-        &:hover{
-            color: var(--link-color-2);
-            font-size: 1.1em;
-            text-decoration: underline;
-        }
-    }
-
-    /*Tablas*/
-    table{
-
-        th,td{
-            border: 2px solid var(--table-color);
-        }
-        thead th{
-            background-color: var(--table-color-2);
-            font-size: 1.3em;
-        }
-        tbody tr:nth-child(even){
-            background-color: var(--table-color-3);
-        }
-        tbody tr:hover{
-            background-color: var(--contrast-color);
-            color: var(--light-color);
-            
-        }
-        caption{
-            font-weight: bold;
-        }
         a{
-            &:hover{
-                color: var(--link-color-2);
-                font-size: 1em;
-            }
+            text-decoration: none;
         }
     }
 
-    /*Formularios*/
-    form{
-        color: var(--light-color);
-        background-color: var(--form-color);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow-2);
-
-        *:required::placeholder{
-            color: var(--link-color);
-            font-style: italic;
-        }
-
+    h1{
+        font-size: 2em;
     }
 
-    .comentarios{
-        color: var(--light-color);
-        background-color: var(--form-color);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow-2);
+    section{
+        background-color: var(--b-color);
+        color: var(--w-color);
+        form{
 
-        h2{
-            font-size: 2em;
         }
-        .comentario{
-            background-color: var(--header-bg-color);
-            color: var(--light-color);
-            box-shadow: var(--box-shadow);
 
-            .comentario-user{
-                color: rgb(0, 0, 0);
-                background-color: rgb(255, 255, 255);
-                border-radius: var(--border-radius);
-            }
-            .texto-comentario{
-                color: var(--light-color);
-                /* background-color: rgb(87, 8, 8); */
-                border-radius: var(--border-radius);
-            }
-        }
-    }
-    .add-comentario{
-        textarea{
-            height: 80px;
+        .busqueda-resumen{
+            color: var(--w-color);
+            background-color: rgb(131, 196, 35);
             border-radius: var(--border-radius);
         }
-        button{
-            font-size: 1em;
+    }
+
+    /* TIPOS POKEMON */
+    .planta{
+        color: var(--b-color);
+        background-color: var(--type-green);
+        border-radius: var(--border-radius);
+    }
+    .veneno{
+        color: var(--w-color);
+        background-color: var(--type-purple);
+    }
+
+    /* Tags con colores oficiales */
+    .tag {
+        border-radius: var(--border-radius);
+        line-height: 2em;
+        text-align: center;
+        padding: 0 1em;
+
+        &:has(+ .tag),
+        &+.tag {
+          flex-grow: 1;
+          padding: 0;
         }
-    } 
-}
-
-/* ANIMACIONES (@keyframes debe ir fuera del body, no debe anidarse*/
-
-@keyframes sangre {
-    0% {
-        color: #8B0000;
-        text-shadow: 2px 2px 6px rgba(139, 0, 0, 0.8);
-        transform: scale(1);
+    
+        &.grass {
+          background-color: #9bcc50;
+        }
+        &.poison {
+          background-color: #b97fc9;
+          color: white;
+        }
+        &.bug {
+          background-color: #729f3f;
+          color: white;
+        }
+        &.normal {
+          background-color: #a4acaf;
+          color: white;
+        }
+        &.flying {
+          background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+        }
+        &.ground {
+          background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+        }
+        &.water {
+          background-color: #4592c4;
+          color: white;
+        }
+        &.electric {
+          background-color: #eed535;
+        }
+        &.steel {
+          background-color: #9eb7b8;
+        }
+        &.ice {
+          background-color: #51c4e7;
+        }
+        &.psychic {
+          background-color: #f366b9;
+          color: white;
+        }
+        &.fighting {
+          background-color: #d56723;
+          color: white;
+        }
+        &.rock {
+          background-color: #a38c21;
+          color: white;
+        }
+        &.fairy {
+          background-color: #fdb9e9;
+        }
+        &.fire {
+          background-color: #fd7d24;
+          color: white;
+        }
+        &.dragon {
+          background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+          color: white;
+        }
+        &.dark {
+          background-color: #707070;
+          color: white;
+        }
+        &.ghost {
+          background-color: #7b62a3;
+          color: white;
+        }
     }
-    25% {
-        color: #ff0000;
-        text-shadow: 4px 4px 12px rgba(255, 0, 0, 0.8);
-        transform: scale(1.1);
-    }
-    50% {
-        color: #8B0000;
-        text-shadow: 3px 3px 8px rgba(139, 0, 0, 0.8);
-        transform: scale(1);
-    }
-    75% {
-        color: #ff0000;
-        text-shadow: 5px 5px 15px rgba(255, 0, 0, 0.9);
-        transform: scale(1.15);
-    }
-    100% {
-        color: #8B0000;
-        text-shadow: 2px 2px 6px rgba(139, 0, 0, 0.8);
-        transform: scale(1);
-    }
-}
-
-main form h1, table h1{
-    animation: sangre 2s ease 2s;
 }

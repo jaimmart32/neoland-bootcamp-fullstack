@@ -4,141 +4,85 @@ HOJA DE ESTILOS PARA ESCRITORIO (MIN-WIDTH: 481PX)
 */
 
 body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    header,footer{
-        padding: 20px 0;
-        text-align: center;
+    nav{
+        height: 90px;
         width: 100%;
-    }
-    .cabecera{
-        height: 250px;   
-    }
 
-    /* ARTÍCULO Y NOTICIAS */
-    article{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 1600px;
-        width: 100%;
-        gap: 15px;
-
-        h1,h2{
-            text-align: justify;
-            padding: 20px;
-        }
-        p{
-            padding: 20px;
-            text-align: justify;
-        }
-        time{
-            padding: 20px;
-        }
-        img{
-            display: block;
-            margin: auto;
-            max-width: 100%;
-        }
-        figcaption{
-            text-align: center;
-        }
-    }
-
-    /* FORMULARIOS(SUSCRIPCIÓN Y COMENTARIOS) */
-    form{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px auto;
-        width: 60%;
-        max-width: 800px;
-        padding: 20px;
-        gap: 15px;
-        label{
-            display: block;
-            margin-bottom: 5px;
-        }
-        #permitir-notificacion{
-            display: inline;
-        }
-        textarea{
-            width: 98%;
-        }
-    }
-
-    /* SECCIÓN DE COMENTARIOS */
-    .comentarios{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 20px auto;
-        width: 60%;
-        max-width: 600px;
-        padding: 20px;
-        gap: 15px;
-
-        h2{
-            text-align: center;
-        }
-
-        .comentario{
+        menu{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
-            gap: 10px;
-            /*width: 100%;*/
-            
-
-            .comentario-user{
-                padding: 5px;
-                margin: 10px;
-            }
-            .texto-comentario{
-                text-align: justify;
-                padding: 5px;
-                margin: 10px;
-                flex-grow: 1;
-            }
-        }
-    }
-
-    .aside-add-comentario{
-        width: 100%;
-    }
-    .add-comentario{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 600px;
-        padding: 20px;
-        text-align: center;
-        gap: 15px;
-    }
-
-    /* LISTADO DE NOTICIAS */
-    table{
-        width: 95%;
-        border-collapse: collapse;
-        margin-bottom: 15px;
-
-        td,th{
-            padding: 8px;
-            text-align: center;
-            vertical-align: top;
-        }
-        td img{
-            display: block;
+            height: 100%;
             width: 100%;
-            height: auto;
-        }
-        td:has(img){
-            padding: 3px;
-            border: none;
+    
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                height: 100%;
+                width: 14.28%;
+            }
         }
     }
+
+    section{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 190px;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            width: 40%;
+            height: 100%;
+
+            .busqueda-bar{
+                width: 80%;
+            }
+            p{
+                width: 80%;
+                margin-top: 15px;
+
+            }
+        }
+
+        .busqueda-resumen{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            height: 40%;
+            text-align: center;
+        }
+    }
+    .pokedex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 20px;
+        margin: 0 auto;
+
+        li{
+            width: 20%;
+
+            img{
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .pokemon{
+            display: inline-block;
+            width: 100%;
+        }
+    }
+    
 }
