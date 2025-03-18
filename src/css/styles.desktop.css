@@ -122,25 +122,14 @@ body{
 
     /* LISTADO DE NOTICIAS */
     table{
-        display: table;
         width: 95%;
         border-collapse: collapse;
         margin-bottom: 15px;
-        
-        thead,tbody,tfoot{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        tr{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
+
         td,th{
-            flex: 1;/*Echar un ojo a flex-grow*/
             padding: 8px;
             text-align: center;
+            vertical-align: top;
         }
         td img{
             display: block;
@@ -153,7 +142,3 @@ body{
         }
     }
 }
-
-/*TODO:  hacer mas ancho el form de añadir comentario, ver como mejorar form de 
-suscripción, ver que hacer con los
-espacios laterales de las paginas.*/
