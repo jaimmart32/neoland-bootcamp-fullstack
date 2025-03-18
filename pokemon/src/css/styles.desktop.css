@@ -1,0 +1,144 @@
+/*
+HOJA DE ESTILOS PARA ESCRITORIO (MIN-WIDTH: 481PX)
+- DISPOSICIÓN
+*/
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    header,footer{
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
+    }
+    .cabecera{
+        height: 250px;   
+    }
+
+    /* ARTÍCULO Y NOTICIAS */
+    article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1600px;
+        width: 100%;
+        gap: 15px;
+
+        h1,h2{
+            text-align: justify;
+            padding: 20px;
+        }
+        p{
+            padding: 20px;
+            text-align: justify;
+        }
+        time{
+            padding: 20px;
+        }
+        img{
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+        figcaption{
+            text-align: center;
+        }
+    }
+
+    /* FORMULARIOS(SUSCRIPCIÓN Y COMENTARIOS) */
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        width: 60%;
+        max-width: 800px;
+        padding: 20px;
+        gap: 15px;
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+        #permitir-notificacion{
+            display: inline;
+        }
+        textarea{
+            width: 98%;
+        }
+    }
+
+    /* SECCIÓN DE COMENTARIOS */
+    .comentarios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        width: 60%;
+        max-width: 600px;
+        padding: 20px;
+        gap: 15px;
+
+        h2{
+            text-align: center;
+        }
+
+        .comentario{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 10px;
+            /*width: 100%;*/
+            
+
+            .comentario-user{
+                padding: 5px;
+                margin: 10px;
+            }
+            .texto-comentario{
+                text-align: justify;
+                padding: 5px;
+                margin: 10px;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .aside-add-comentario{
+        width: 100%;
+    }
+    .add-comentario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        text-align: center;
+        gap: 15px;
+    }
+
+    /* LISTADO DE NOTICIAS */
+    table{
+        width: 95%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+
+        td,th{
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+        }
+        td img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        td:has(img){
+            padding: 3px;
+            border: none;
+        }
+    }
+}

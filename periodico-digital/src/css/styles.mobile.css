@@ -57,25 +57,14 @@ body{
 
     /* LISTADO DE NOTICIAS */
     table{
-        display: table;
         width: 95%;
         border-collapse: collapse;
         margin-bottom: 15px;
-        
-        thead,tbody,tfoot{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        tr{
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
+
         td,th{
-            flex: 1;/*Echar un ojo a flex-grow*/
             padding: 8px;
             text-align: center;
+            vertical-align: top;
         }
         td img{
             display: block;
@@ -95,7 +84,8 @@ body{
             th:nth-child(3),
             th:nth-child(4),
             td:nth-child(3),
-            td:nth-child(4){
+            td:nth-child(4),
+            tfoot tr th{/*como ocultar footer?/*/
                 display: none;
             }
         }
