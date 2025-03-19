@@ -27,11 +27,12 @@ window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 function onDOMContentLoaded() {
     console.log('Ya esta disponible la página');
 
-    // Busca el pokemon introducido
+    // 2. Busca el pokemon introducido
     let botonBuscar = document.getElementById('botonBuscar');
     botonBuscar.addEventListener('click', buscarPokemon);
 
-    leerListaPokemon();
+    // 3. Renderizar lista pokemon
+    renderizarListaPokemon();
 }
 
 /* Carga la lista de los pokemons */
@@ -45,7 +46,39 @@ function leerListaPokemon() {
 
 /* 1. Busca en el pokedex.json un pokemon determinado usando el form de busqueda */
 function buscarPokemon() {
-    let campoBusqueda = document.getElementById('busqueda');
-    console.log('Buscando Pokémon:', campoBusqueda.value);
-    console.log(pokedex.at(93));
+    let campoBusqueda = document.getElementById('busqueda').value.toLowerCase();
+    console.log('Buscando Pokémon:', campoBusqueda);
+
+    //Filtra el pokémon por nombre o numero
+    let resultado = pokedex.find((pokemon) => 
+        pokemon.name.english.toLowerCase() === campoBusqueda || 
+        String(pokemon.id) === campoBusqueda);
+    if(resultado) {
+        //Falta llamar a renderizarPokemon()
+        console.log('Pokemon:', campoBusqueda, 'se encontró');
+    }
+    else {
+        console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
+    }
+}
+
+/* 3. Genera dinámicamente la lista de pokémons inicial(mirar como hacer los span para los tipos) */
+function renderizarListaPokemon() {
+    let listaPokedex = document.querySelector('.lista-pokedex');
+    listaPokedex.innerHTML = "";
+
+    pokedex.forEach((pokemon) => {
+        let li = document.createElement('li');
+
+        li.innerHTML = `
+            <div class="pokemon">
+                <img src="pokedex/images/${String(pokemon.id).padStart(3, '0')}.png" alt="${pokemon.name.english}">
+                <p>N.º ${String(pokemon.id).padStart(4, '0')}</p>
+                <h2>${pokemon.name.english}</h2>
+            </div>
+        `;
+
+        listaPokedex.appendChild(li);
+    })
+    console.log('Lista de pokemon generada correctamente.');
 }
