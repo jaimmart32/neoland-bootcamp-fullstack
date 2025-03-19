@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styles.mobile.css" media="screen and (max-width: 480px)">
     <link rel="stylesheet" href="css/styles.desktop.css" media="screen and (min-width: 481px)">
-    <script src="js/pokemon.js" defer></script>
+    <script src="js/pokemon.js" type="module" defer></script>
 </head>
 <body>
     <header>
@@ -27,11 +27,11 @@
     </header>
     <main>
         <section>
-            <form action="#">
-                <label for="nombre">Nombre o número</label>
+            <form action="">
+                <label for="busqueda">Nombre o número</label>
                 <div class="busqueda-bar">
-                    <input type="text" id="nombre" name="nombre">
-                    <button>Buscar</button>
+                    <input type="text" id="busqueda" name="busqueda">
+                    <button type="button" id="botonBuscar" name="botonBuscar">Buscar</button>
                 </div>
                 
                 <p>¡Usa la búsqueda avanzada para encontrar Pokémon por su tipo, debilidad, habilidad y demás datos!</p>
@@ -41,58 +41,13 @@
             </div>
         </section>
 
-        <ol class="pokedex">
+        <ol class="lista-pokedex">
             <li>
                 <div class="pokemon">
-                    <img src="img/001.png" alt="Imagen de pokemon">
+                    <img src="pokedex/images/001.png" alt="Imagen de pokemon">
                     <p>N.º 0001</p>
                     <h2>Bulbasaur</h2>
                     <span class="tag grass">Planta</span><span class="tag poison">Veneno</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="pokemon">
-                    <img src="#" alt="Imagen de pokemon">
-                    <p>N·0001</p>
-                    <h2>Bulbasaur</h2>
-                    <span>Planta</span><span> Veneno</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="pokemon">
-                    <img src="#" alt="Imagen de pokemon">
-                    <p>N·0001</p>
-                    <h2>Bulbasaur</h2>
-                    <span>Planta</span><span> Veneno</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="pokemon">
-                    <img src="#" alt="Imagen de pokemon">
-                    <p>N·0001</p>
-                    <h2>Bulbasaur</h2>
-                    <span>Planta</span><span> Veneno</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="pokemon">
-                    <img src="#" alt="Imagen de pokemon">
-                    <p>N·0001</p>
-                    <h2>Bulbasaur</h2>
-                    <span>Planta</span><span> Veneno</span>
-                </div>
-            </li>
-
-            <li>
-                <div class="pokemon">
-                    <img src="#" alt="Imagen de pokemon">
-                    <p>N·0001</p>
-                    <h2>Bulbasaur</h2>
-                    <span>Planta</span><span> Veneno</span>
                 </div>
             </li>
         </ol>

@@ -75,7 +75,7 @@ body{
     }
 
     /* POKÉDEX */
-    .pokedex{
+    .lista-pokedex{
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;

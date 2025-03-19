@@ -1,3 +1,5 @@
+import pokedex from '../pokedex/pokedex.json' with {type: "json"}
+
 // Se rellena el formulario.
 // Se hace una peticion POST al servidor.
 // El servidor busca la informacion en la base de datos y la devuelve si la hay, si 
@@ -20,42 +22,30 @@
 // 6.1.1 IF hay mas de un polemon, con FOR por cada pokemon añado su ficha a la lista
 // 6.2. ELSE no hay pokemon, muestro "polémon no encontrado" en lugar de la lista
 
-let msg = 'Como estan los maquinas'
-const NO_CAMBIA = 'mi constante'
-let num = 7
+window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 
-// Template literal:
-let pikachuMsg = `Soy Pikachu Rodriguez Mandanguez, ${msg}.`;
-let lista = [
-    'cadena',
-    'texto',
-    'nombre',
-    5
-]
+function onDOMContentLoaded() {
+    console.log('Ya esta disponible la página');
 
-let miObjeto = {
-    1: 'uno',
-    2: 'dos',
-    3: 'tres'
+    // Busca el pokemon introducido
+    let botonBuscar = document.getElementById('botonBuscar');
+    botonBuscar.addEventListener('click', buscarPokemon);
+
+    leerListaPokemon();
 }
 
-let pokemon = {
-    nombre: 'Bulbasaur',
-    numero: 1,
+/* Carga la lista de los pokemons */
+function leerListaPokemon() {
+    let listaPokemons = document.getElementsByClassName('lista-pokedex');
+    console.log('leerListaPokemon fue llamada.', listaPokemons);
+    pokedex.forEach(element => {
+        console.log(element.name.english);
+    })
 }
 
-console.log(msg, NO_CAMBIA, num);
-console.log('Array:');
-console.log(typeof lista)
-console.log(lista);
-console.log('Objeto: ', miObjeto);
-console.log('--------------------------------------------');
-console.log('lista: con join: ', lista.join(' '));
-
-console.log('msg spliteado: ', msg.split(' '));
-console.log('Mensaje de pikachu:', pikachuMsg)
-console.log('--------------------------------------------');
-console.log('Utilizando forEach');
-lista.forEach((idioma) => {
-    console.log(idioma);
-});
+/* 1. Busca en el pokedex.json un pokemon determinado usando el form de busqueda */
+function buscarPokemon() {
+    let campoBusqueda = document.getElementById('busqueda');
+    console.log('Buscando Pokémon:', campoBusqueda.value);
+    console.log(pokedex.at(93));
+}
