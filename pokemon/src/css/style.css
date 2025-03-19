@@ -7,7 +7,10 @@
     --w-color: white;
     --type-green: green;
     --type-purple: purple;
+    --nav-color: white;
+    --nav-color-hover: grey;
     --border-radius: 4px;
+    --nav-b-border: 8px;
 }
 
 body{
@@ -16,28 +19,58 @@ body{
 
         li{
             list-style: none;
+            background-color: var(--nav-color);
+            border-bottom: var(--nav-b-border) solid transparent;
         }
 
         .nav-inicio{
-            background-color: grey;
+            border-bottom-color: grey;
+            &:hover{
+              --nav-color-hover: grey;
+              background-color: var(--nav-color-hover);
+            }
         }
         .nav-poke{
-            background-color: red;
+            border-bottom-color: red;
+            &:hover{
+              --nav-color-hover: red;
+              background-color: var(--nav-color-hover);
+            }
         }
         .nav-juegos{
-            background-color: orange;
+            border-bottom-color: orange;
+            &:hover{
+              --nav-color-hover: orange;
+              background-color: var(--nav-color-hover);
+            }
         }
         .nav-cartas{
-            background-color: yellow;
+            border-bottom-color: yellow;
+            &:hover{
+              --nav-color-hover: yellow;
+              background-color: var(--nav-color-hover);
+            }
         }
         .nav-dibujos{
-            background-color: green;
+          border-bottom-color: green;
+          &:hover{
+            --nav-color-hover: green;
+            background-color: var(--nav-color-hover);
+          }
         }
         .nav-eventos{
-            background-color: lightblue;
+          border-bottom-color: lightblue;
+          &:hover{
+            --nav-color-hover: lightblue;
+            background-color: var(--nav-color-hover);
+          }
         }
         .nav-noticias{
-            background-color: blue;
+          border-bottom-color: blue;
+          &:hover{
+            --nav-color-hover: blue;
+            background-color: var(--nav-color-hover);
+          }
         }
 
         a{
