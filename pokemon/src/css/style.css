@@ -5,8 +5,6 @@
 :root{
     --b-color: black;
     --w-color: white;
-    --type-green: green;
-    --type-purple: purple;
     --nav-color: white;
     --nav-color-hover: grey;
     --border-radius: 4px;
@@ -85,9 +83,6 @@ body{
     section{
         background-color: var(--b-color);
         color: var(--w-color);
-        form{
-
-        }
 
         .busqueda-resumen{
             color: var(--w-color);
@@ -96,16 +91,20 @@ body{
         }
     }
 
-    /* TIPOS POKEMON */
-    .planta{
-        color: var(--b-color);
-        background-color: var(--type-green);
+    .pokemon{
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 6px rgba(5, 5, 5, 0.2);
+      h2{
+        font-size: 2em;
+      }
+
+      img{
         border-radius: var(--border-radius);
+        background-color: rgb(243, 243, 243);
+      }
     }
-    .veneno{
-        color: var(--w-color);
-        background-color: var(--type-purple);
-    }
+
+    /* Tipos Pokémon */
 
     /* Tags con colores oficiales */
     .tag {

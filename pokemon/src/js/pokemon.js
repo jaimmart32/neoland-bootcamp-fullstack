@@ -35,15 +35,6 @@ function onDOMContentLoaded() {
     renderizarListaPokemon();
 }
 
-/* Carga la lista de los pokemons */
-function leerListaPokemon() {
-    let listaPokemons = document.getElementsByClassName('lista-pokedex');
-    console.log('leerListaPokemon fue llamada.', listaPokemons);
-    pokedex.forEach(element => {
-        console.log(element.name.english);
-    })
-}
-
 /* 1. Busca en el pokedex.json un pokemon determinado usando el form de busqueda */
 function buscarPokemon() {
     let campoBusqueda = document.getElementById('busqueda').value.toLowerCase();
@@ -63,24 +54,46 @@ function buscarPokemon() {
     }
 }
 
+// Crea un li con el contenido de la tarjeta de un Pokémon.
+function crearPokemon(pokemon) {
+    let li = document.createElement('li');
+    let divPokemon = document.createElement('div');
+    divPokemon.classList.add('pokemon');
+
+    let imgPokemon = document.createElement('img');
+    imgPokemon.src = `pokedex/images/${String(pokemon.id).padStart(3, '0')}.png`;
+    imgPokemon.alt = pokemon.name.english;
+    divPokemon.appendChild(imgPokemon);
+
+    let pNumero = document.createElement('p');
+    pNumero.innerText = `N.º ${String(pokemon.id).padStart(4, '0')}`;
+    divPokemon.appendChild(pNumero);
+
+    let h2Nombre = document.createElement('h2');
+    h2Nombre.innerText = pokemon.name.english;
+    divPokemon.appendChild(h2Nombre);
+
+    let divTipos = document.createElement('div');
+    divTipos.classList.add('tipos');
+    pokemon.type.forEach((tipo) => {
+        let spanTipo = document.createElement('span');
+        spanTipo.classList.add('tag');
+        spanTipo.classList.add(`${tipo.toLowerCase()}`);
+        spanTipo.innerText = tipo;
+        divTipos.appendChild(spanTipo);
+    });
+    divPokemon.appendChild(divTipos);
+    li.appendChild(divPokemon);
+
+    return li;
+}
+
 // 4. Muestra el pokémon si es encontrado en la pokedex.
 function renderizarPokemon(pokemon) {
     let listaPokedex = document.querySelector('.lista-pokedex');
-    listaPokedex.innerHTML = "";
+    listaPokedex.innerHTML = "";// Cambiar por bucle con remove
 
-    let li = document.createElement('li');
-
-    li.innerHTML = `
-        <div class="pokemon">
-            <img src="pokedex/images/${String(pokemon.id).padStart(3, '0')}.png" alt="${pokemon.name.english}">
-            <p>N.º ${String(pokemon.id).padStart(4, '0')}</p>
-            <h2>${pokemon.name.english}</h2>
-            <div class="tipos">
-                ${pokemon.type.map(tipo => `<span class="tag ${tipo.toLowerCase()}">${tipo}</span>`).join('')}
-            </div>
-        </div>
-    `;
-
+    let li = crearPokemon(pokemon);
     listaPokedex.appendChild(li);
     console.log(`Pokemon: ${pokemon.name.english} renderizado.`)
 }
@@ -91,19 +104,7 @@ function renderizarListaPokemon() {
     listaPokedex.innerHTML = "";
 
     pokedex.forEach((pokemon) => {
-        let li = document.createElement('li');
-
-        li.innerHTML = `
-            <div class="pokemon">
-                <img src="pokedex/images/${String(pokemon.id).padStart(3, '0')}.png" alt="${pokemon.name.english}">
-                <p>N.º ${String(pokemon.id).padStart(4, '0')}</p>
-                <h2>${pokemon.name.english}</h2>
-                <div class="tipos">
-                ${pokemon.type.map(tipo => `<span class="tag ${tipo.toLowerCase()}">${tipo}</span>`).join('')}
-                </div>
-            </div>
-        `;
-
+        let li = crearPokemon(pokemon);
         listaPokedex.appendChild(li);
     })
     console.log('Lista de pokemon generada correctamente.');
