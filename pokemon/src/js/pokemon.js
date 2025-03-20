@@ -31,7 +31,7 @@ function onDOMContentLoaded() {
     let botonBuscar = document.getElementById('botonBuscar');
     botonBuscar.addEventListener('click', buscarPokemon);
 
-    // 3. Renderizar lista pokemon
+    // 3.
     renderizarListaPokemon();
 }
 
@@ -56,10 +56,33 @@ function buscarPokemon() {
     if(resultado) {
         //Falta llamar a renderizarPokemon()
         console.log('Pokemon:', campoBusqueda, 'se encontró');
+        renderizarPokemon(resultado);
     }
     else {
         console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
     }
+}
+
+// 4. Muestra el pokémon si es encontrado en la pokedex.
+function renderizarPokemon(pokemon) {
+    let listaPokedex = document.querySelector('.lista-pokedex');
+    listaPokedex.innerHTML = "";
+
+    let li = document.createElement('li');
+
+    li.innerHTML = `
+        <div class="pokemon">
+            <img src="pokedex/images/${String(pokemon.id).padStart(3, '0')}.png" alt="${pokemon.name.english}">
+            <p>N.º ${String(pokemon.id).padStart(4, '0')}</p>
+            <h2>${pokemon.name.english}</h2>
+            <div class="tipos">
+                ${pokemon.type.map(tipo => `<span class="tag ${tipo.toLowerCase()}">${tipo}</span>`).join('')}
+            </div>
+        </div>
+    `;
+
+    listaPokedex.appendChild(li);
+    console.log(`Pokemon: ${pokemon.name.english} renderizado.`)
 }
 
 /* 3. Genera dinámicamente la lista de pokémons inicial(mirar como hacer los span para los tipos) */
@@ -75,6 +98,9 @@ function renderizarListaPokemon() {
                 <img src="pokedex/images/${String(pokemon.id).padStart(3, '0')}.png" alt="${pokemon.name.english}">
                 <p>N.º ${String(pokemon.id).padStart(4, '0')}</p>
                 <h2>${pokemon.name.english}</h2>
+                <div class="tipos">
+                ${pokemon.type.map(tipo => `<span class="tag ${tipo.toLowerCase()}">${tipo}</span>`).join('')}
+                </div>
             </div>
         `;
 
