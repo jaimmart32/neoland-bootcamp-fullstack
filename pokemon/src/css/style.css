@@ -12,6 +12,7 @@
 }
 
 body{
+  color: #696969;
     
     menu{
 
@@ -19,6 +20,14 @@ body{
             list-style: none;
             background-color: var(--nav-color);
             border-bottom: var(--nav-b-border) solid transparent;
+
+            a{
+              text-decoration: none;
+              color: #616161;
+            }
+            &:hover a{
+              color: var(--w-color);
+            }
         }
 
         .nav-inicio{
@@ -43,9 +52,9 @@ body{
             }
         }
         .nav-cartas{
-            border-bottom-color: yellow;
+            border-bottom-color: rgb(219, 219, 0);
             &:hover{
-              --nav-color-hover: yellow;
+              --nav-color-hover: rgb(219, 219, 0);
               background-color: var(--nav-color-hover);
             }
         }
@@ -70,21 +79,22 @@ body{
             background-color: var(--nav-color-hover);
           }
         }
-
-        a{
-            text-decoration: none;
-        }
     }
 
     h1{
-        font-size: 2em;
+        font-size: 3em;
     }
 
     section{
         background-color: var(--b-color);
         color: var(--w-color);
 
+        form{
+          font-size: 1.2em;
+        }
+
         .busqueda-resumen{
+          font-size: 1.2em;
             color: var(--w-color);
             background-color: rgb(131, 196, 35);
             border-radius: var(--border-radius);
@@ -96,6 +106,7 @@ body{
       box-shadow: 0 4px 6px rgba(5, 5, 5, 0.2);
       h2{
         font-size: 2em;
+        color: var(--b-color);
       }
 
       img{

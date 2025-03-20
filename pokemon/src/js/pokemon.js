@@ -8,10 +8,6 @@ import pokedex from '../pokedex/pokedex.json' with {type: "json"}
 // kedex y si no muestra el mensaje de error al usuario.
 // 
 //
-//
-//
-//
-
 // 1. SET busqueda = INPUT: nombre o numero de pokemon
 // 2. CLICK en boton de submit
 // 3. READ base de datos

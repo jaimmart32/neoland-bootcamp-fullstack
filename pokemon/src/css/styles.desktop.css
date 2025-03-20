@@ -7,32 +7,39 @@ body{
 
     /* MENÚ DE LA APP */
     header{
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-    }
-    nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 90px;
-        width: 100%;
-
-        menu{
+    
+        nav{
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
-            width: 80%;
-    
-            li{
+            height: 90px;
+            width: 100%;
+
+            menu{
                 display: flex;
-                align-items: center;
                 justify-content: center;
-                text-align: center;
+                align-items: center;
                 height: 100%;
-                width: 14.28%;
+                width: 80%;
+        
+                li{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    height: 100%;
+                    width: 14.28%;
+                }
             }
+        }
+
+        h1{
+            display: flex;
+            align-items: center;
+            height: 90px;
+            width: 80%;
+            margin: 0 auto;
+            vertical-align: baseline;
         }
     }
 
