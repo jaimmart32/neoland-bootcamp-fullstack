@@ -24,29 +24,32 @@ function onDOMContentLoaded() {
     console.log('Ya esta disponible la página');
 
     // 2. Busca el pokemon introducido
-    let botonBuscar = document.getElementById('botonBuscar');
-    botonBuscar.addEventListener('click', buscarPokemon);
+    let formBusqueda = document.getElementById('form-busqueda');
+    formBusqueda.addEventListener('submit', buscarPokemon);
 
     // 3.
     renderizarListaPokemon();
 }
 
 /* 1. Busca en el pokedex.json un pokemon determinado usando el form de busqueda */
-function buscarPokemon() {
+function buscarPokemon(event) {
+    event.preventDefault();
     let campoBusqueda = document.getElementById('busqueda').value.toLowerCase();
     console.log('Buscando Pokémon:', campoBusqueda);
 
     //Filtra el pokémon por nombre o numero
-    let resultado = pokedex.find((pokemon) => 
-        pokemon.name.english.toLowerCase() === campoBusqueda || 
-        String(pokemon.id) === campoBusqueda);
-    if(resultado) {
+    let resultados = pokedex.filter(pokemon =>
+        pokemon.name.english.toLowerCase().includes(campoBusqueda) ||
+        String(pokemon.id) === campoBusqueda
+    );
+    if(resultados.length > 0) {
         //Falta llamar a renderizarPokemon()
-        console.log('Pokemon:', campoBusqueda, 'se encontró');
-        renderizarPokemon(resultado);
+        console.log('Pokemons encontrados:', resultados.length);
+        renderizarListaPokemon(resultados);
     }
     else {
         console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
+        window.alert(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
     }
 }
 
@@ -84,22 +87,16 @@ function crearPokemon(pokemon) {
     return li;
 }
 
-// 4. Muestra el pokémon si es encontrado en la pokedex.
-function renderizarPokemon(pokemon) {
+/* 3. Genera dinámicamente la lista de pokémons inicial si no recibe parametro o
+muestra la lista filtrada en la búsqueda de pokémon. */
+function renderizarListaPokemon(lista = pokedex) {
     let listaPokedex = document.querySelector('.lista-pokedex');
-    listaPokedex.innerHTML = "";// Cambiar por bucle con remove
+    // Limpia la lista antes de renderizar
+    while(listaPokedex.firstChild) {
+        listaPokedex.removeChild(listaPokedex.firstChild);
+    }
 
-    let li = crearPokemon(pokemon);
-    listaPokedex.appendChild(li);
-    console.log(`Pokemon: ${pokemon.name.english} renderizado.`)
-}
-
-/* 3. Genera dinámicamente la lista de pokémons inicial(mirar como hacer los span para los tipos) */
-function renderizarListaPokemon() {
-    let listaPokedex = document.querySelector('.lista-pokedex');
-    listaPokedex.innerHTML = "";
-
-    pokedex.forEach((pokemon) => {
+    lista.forEach((pokemon) => {
         let li = crearPokemon(pokemon);
         listaPokedex.appendChild(li);
     })
