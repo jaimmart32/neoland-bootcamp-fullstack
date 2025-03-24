@@ -36,28 +36,50 @@ function buscarPokemon(event) {
     event.preventDefault();
     let campoBusqueda = document.getElementById('busqueda').value.toLowerCase();
     console.log('Buscando Pokémon:', campoBusqueda);
+    let resultados;
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 
+    if(campoBusqueda === 'favoritos' || campoBusqueda === 'favorito'){
+        resultados = pokedex.filter(pokemon =>
+            favoritos.includes(pokemon.id)
+        );
+    }
+    else{
     //Filtra el pokémon por nombre o numero
-    let resultados = pokedex.filter(pokemon =>
+        resultados = pokedex.filter(pokemon =>
         pokemon.name.english.toLowerCase().includes(campoBusqueda) ||
         String(pokemon.id) === campoBusqueda
-    );
+        );
+    }
     if(resultados.length > 0) {
         //Falta llamar a renderizarPokemon()
         console.log('Pokemons encontrados:', resultados.length);
         renderizarListaPokemon(resultados);
     }
     else {
-        console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
-        window.alert(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
+        if(campoBusqueda === 'favoritos' || campoBusqueda === 'favorito'){
+            window.alert('De momento no tienes pokémons en tu lista de favoritos.\nAñade pokémons clickando en uno. Los pokémons favoritos tendran un borde dorado.');
+            renderizarListaPokemon();
+        }
+        else{
+            console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
+            window.alert(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
+        }
     }
 }
 
 // Crea un li con el contenido de la tarjeta de un Pokémon.
 function crearPokemon(pokemon) {
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
     let li = document.createElement('li');
     let divPokemon = document.createElement('div');
     divPokemon.classList.add('pokemon');
+    if(favoritos.includes(pokemon.id)){
+        divPokemon.classList.add('favorito');
+    }
+    divPokemon.dataset.id = pokemon.id;
+    divPokemon.addEventListener('click',guardarFavorito);
 
     let imgPokemon = document.createElement('img');
     imgPokemon.src = `pokedex/images/${String(pokemon.id).padStart(3, '0')}.png`;
@@ -92,7 +114,8 @@ muestra la lista filtrada en la búsqueda de pokémon. */
 function renderizarListaPokemon(lista = pokedex) {
     let listaPokedex = document.querySelector('.lista-pokedex');
     // Limpia la lista antes de renderizar
-    while(listaPokedex.firstChild) {
+    while(listaPokedex.children.length > 0) {
+        listaPokedex.children[0].removeEventListener('click', guardarFavorito);
         listaPokedex.removeChild(listaPokedex.firstChild);
     }
 
@@ -101,4 +124,22 @@ function renderizarListaPokemon(lista = pokedex) {
         listaPokedex.appendChild(li);
     })
     console.log('Lista de pokemon generada correctamente.');
+}
+
+function guardarFavorito(){
+    let pokemonId = Number(this.dataset.id);
+    
+    // Añadir al LocalStorage el id
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    
+    //si ya esta en favoritos lo eliminamos y si no lo añadimos
+    if(favoritos.includes(pokemonId)){
+        favoritos = favoritos.filter(id => id !== pokemonId);
+        this.classList.remove('favorito');
+    }
+    else{
+        this.classList.add('favorito');
+        favoritos.push(pokemonId);
+    }
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
 }

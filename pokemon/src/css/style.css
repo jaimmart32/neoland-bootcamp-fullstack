@@ -113,6 +113,12 @@ body{
         border-radius: var(--border-radius);
         background-color: rgb(243, 243, 243);
       }
+      &:hover{
+        box-shadow: 0 0 15px greenyellow;
+      }
+    }
+    .favorito{
+      border: 5px solid gold;
     }
 
     /* Tipos Pokémon */
