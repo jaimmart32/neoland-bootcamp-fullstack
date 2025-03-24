@@ -99,6 +99,12 @@ body{
             background-color: rgb(131, 196, 35);
             border-radius: var(--border-radius);
         }
+        .favorito-resumen{
+          font-size: 1.2em;
+            color: var(--w-color);
+            background-color: rgb(201, 171, 0);
+            border-radius: var(--border-radius);
+        }
     }
 
     .pokemon{
@@ -201,5 +207,21 @@ body{
           background-color: #7b62a3;
           color: white;
         }
+    }
+
+    /* MENSAJES DE ERROR */
+    .error {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      margin: 10px 0;
+      background-color: #ffeeee;
+      border: 1px solid red;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    .oculto {
+      display: none;
     }
 }

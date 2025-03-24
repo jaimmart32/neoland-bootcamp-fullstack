@@ -48,6 +48,7 @@ body{
         display: flex;
         justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;/*Se sale del section*/
         height: 190px;
 
         form{
@@ -71,6 +72,18 @@ body{
         }
 
         .busqueda-resumen{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 20%;
+            height: auto;
+            text-align: center;
+            padding: 5px 30px;
+        }
+
+        .favorito-resumen{
             display: flex;
             flex-direction: column;
             align-items: center;

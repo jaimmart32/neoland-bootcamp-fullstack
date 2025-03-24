@@ -55,15 +55,16 @@ function buscarPokemon(event) {
         //Falta llamar a renderizarPokemon()
         console.log('Pokemons encontrados:', resultados.length);
         renderizarListaPokemon(resultados);
+        ocultarError();
     }
     else {
         if(campoBusqueda === 'favoritos' || campoBusqueda === 'favorito'){
-            window.alert('De momento no tienes pokémons en tu lista de favoritos.\nAñade pokémons clickando en uno. Los pokémons favoritos tendran un borde dorado.');
+            mostrarError('De momento no tienes pokémons en tu lista de favoritos. Añade pokémons clickando en uno. Los pokémons favoritos tendran un borde dorado.');
             renderizarListaPokemon();
         }
         else{
             console.log('Pokemon:', campoBusqueda, 'no se pudo encontrar');
-            window.alert(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
+            mostrarError(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
         }
     }
 }
@@ -142,4 +143,18 @@ function guardarFavorito(){
         favoritos.push(pokemonId);
     }
     localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+// Mensajes de error
+
+function mostrarError(mensaje){
+    let divError = document.getElementById('mensaje-error');
+    divError.textContent = mensaje;
+    divError.classList.remove('oculto');
+}
+
+function ocultarError(){
+    let divError = document.getElementById('mensaje-error');
+    divError.textContent = '';
+    divError.classList.add('oculto');
 }
