@@ -48,8 +48,8 @@ body{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        flex-wrap: wrap;/*Se sale del section*/
-        height: 190px;
+        flex-wrap: wrap;
+        padding: 10px;
 
         form{
             display: flex;
@@ -138,6 +138,17 @@ body{
                     transform: scale(1.1);
                 }
             }
+        }
+        .move{
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 12px;
+            text-align: center;
+
+            &:hover {
+                background-color: #d1d1d1;
+                transform: scale(1.05);
+              }
         }
     }  
 }

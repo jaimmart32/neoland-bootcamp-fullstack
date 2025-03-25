@@ -126,6 +126,15 @@ body{
     .favorito{
       border: 5px solid gold;
     }
+    .move {
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #1a1a1a;
+      background-color: #e6e6e6;
+      border-radius: var(--border-radius, 8px);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
 
     /* Tipos Pokémon */
 

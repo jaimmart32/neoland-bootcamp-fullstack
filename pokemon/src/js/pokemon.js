@@ -16,7 +16,7 @@ import pokedex from '../pokedex/pokedex.json' with {type: "json"}
 // 5. SHOW tabla de datos (lista-pokemon) limpia
 // 6.1. IF hay pokemon, lo añado a la lista con DISPLAY
 // 6.1.1 IF hay mas de un polemon, con FOR por cada pokemon añado su ficha a la lista
-// 6.2. ELSE no hay pokemon, muestro "polémon no encontrado" en lugar de la lista
+// 6.2. ELSE no hay pokemon, muestro "pokémon no encontrado" en lugar de la lista
 
 window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 
@@ -26,6 +26,10 @@ function onDOMContentLoaded() {
     // 2. Busca el pokemon introducido
     let formBusqueda = document.getElementById('form-busqueda');
     formBusqueda.addEventListener('submit', buscarPokemon);
+
+    // Buscare Habilidades
+    let formHabilidades = document.getElementById('form-habilidades');
+    formHabilidades.addEventListener('submit', buscarHabilidades);
 
     // 3.
     renderizarListaPokemon();
@@ -67,6 +71,59 @@ function buscarPokemon(event) {
             mostrarError(`No se pudo encontrar: ${campoBusqueda}. \nPor favor, intentelo de nuevo.`);
         }
     }
+}
+
+// Buscar habilidades de un pokemon concreto mediante peticiones a la API
+function buscarHabilidades(event){
+    event.preventDefault();
+
+    let campoBusqueda = document.getElementById('busqueda-hab').value.toLowerCase();
+    console.log('Buscando Habilidades de:', campoBusqueda);
+    let pokemons = pokedex;
+
+    if(pokemons.find(pokemon => pokemon.name.english.toLocaleLowerCase() === campoBusqueda )){
+        ocultarError();
+        fetch(`https://pokeapi.co/api/v2/pokemon/${campoBusqueda}`)
+            .then(response => {
+                if(!response.ok){
+                    throw Error("No se encontró el Pokemon, lo siento.")
+                }
+                response.json()})
+            .then(data => {
+                let  movimientos = data.moves.map(move => move.move.name);
+                console.log(movimientos);
+                mostrarMovimientos(movimientos);
+            })
+            .catch(error => {
+                console.log("Error al obtener Pokémon de la PokeAPI:", error.message);
+                mostrarError(error.message);
+            })
+    }
+    else{
+        mostrarError(`El Pokémon: ${campoBusqueda} no existe en la Pokédex.`)
+    }
+
+}
+
+function mostrarMovimientos(movimientos){
+    let listaPokedex = document.querySelector('.lista-pokedex');
+    // Limpia la lista antes de renderizar
+    while(listaPokedex.children.length > 0) {
+        listaPokedex.children[0].removeEventListener('click', guardarFavorito);
+        listaPokedex.removeChild(listaPokedex.firstChild);
+    }
+
+    movimientos.forEach((movimiento) => {
+        let li = crearMovimiento(movimiento);
+        listaPokedex.appendChild(li);
+    })
+}
+
+function crearMovimiento(movimiento){
+    let li = document.createElement('li');
+    li.classList.add('move');
+    li.innerText = movimiento;
+    return li;
 }
 
 // Crea un li con el contenido de la tarjeta de un Pokémon.
