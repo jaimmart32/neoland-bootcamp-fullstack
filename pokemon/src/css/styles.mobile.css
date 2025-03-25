@@ -10,9 +10,9 @@ body{
     *{
         box-sizing: border-box;
     }
-    *:hover{
-    background-color: white;/*MOVER HOVERS A DESKTOP Y NO ANULARLOS AQUI!!!*/
-    }
+
+    /*MOVER HOVERS A DESKTOP Y NO ANULARLOS AQUI!!!*/
+
     /* MENÚ DE LA APP */
     header{
         display: flex;

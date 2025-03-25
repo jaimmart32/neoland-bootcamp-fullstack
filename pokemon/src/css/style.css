@@ -25,60 +25,35 @@ body{
               text-decoration: none;
               color: #616161;
             }
-            &:hover a{
-              color: var(--w-color);
-            }
         }
-
         .nav-inicio{
-            border-bottom-color: grey;
-            &:hover{
-              --nav-color-hover: grey;
-              background-color: var(--nav-color-hover);
-            }
-        }
-        .nav-poke{
-            border-bottom-color: red;
-            &:hover{
-              --nav-color-hover: red;
-              background-color: var(--nav-color-hover);
-            }
-        }
-        .nav-juegos{
-            border-bottom-color: orange;
-            &:hover{
-              --nav-color-hover: orange;
-              background-color: var(--nav-color-hover);
-            }
-        }
-        .nav-cartas{
-            border-bottom-color: rgb(219, 219, 0);
-            &:hover{
-              --nav-color-hover: rgb(219, 219, 0);
-              background-color: var(--nav-color-hover);
-            }
-        }
-        .nav-dibujos{
-          border-bottom-color: green;
-          &:hover{
-            --nav-color-hover: green;
-            background-color: var(--nav-color-hover);
-          }
-        }
-        .nav-eventos{
-          border-bottom-color: lightblue;
-          &:hover{
-            --nav-color-hover: lightblue;
-            background-color: var(--nav-color-hover);
-          }
-        }
-        .nav-noticias{
-          border-bottom-color: blue;
-          &:hover{
-            --nav-color-hover: blue;
-            background-color: var(--nav-color-hover);
-          }
-        }
+          border-bottom-color: grey;
+          
+      }
+      .nav-poke{
+          border-bottom-color: red;
+          
+      }
+      .nav-juegos{
+          border-bottom-color: orange;
+          
+      }
+      .nav-cartas{
+          border-bottom-color: rgb(219, 219, 0);
+          
+      }
+      .nav-dibujos{
+        border-bottom-color: green;
+        
+      }
+      .nav-eventos{
+        border-bottom-color: lightblue;
+        
+      }
+      .nav-noticias{
+        border-bottom-color: blue;
+        
+      }
     }
 
     h1{
@@ -118,9 +93,6 @@ body{
       img{
         border-radius: var(--border-radius);
         background-color: rgb(243, 243, 243);
-      }
-      &:hover{
-        box-shadow: 0 0 15px greenyellow;
       }
     }
     .favorito{

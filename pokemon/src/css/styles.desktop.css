@@ -29,6 +29,52 @@ body{
                     text-align: center;
                     height: 100%;
                     width: 14.28%;
+
+                    &:hover a{
+                        color: var(--w-color);
+                    }
+                }
+                .nav-inicio{
+                    &:hover{
+                      --nav-color-hover: grey;
+                      background-color: var(--nav-color-hover);
+                    }
+                }
+                .nav-poke{
+                    &:hover{
+                      --nav-color-hover: red;
+                      background-color: var(--nav-color-hover);
+                    }
+                }
+                .nav-juegos{
+                    &:hover{
+                      --nav-color-hover: orange;
+                      background-color: var(--nav-color-hover);
+                    }
+                }
+                .nav-cartas{
+                    &:hover{
+                      --nav-color-hover: rgb(219, 219, 0);
+                      background-color: var(--nav-color-hover);
+                    }
+                }
+                .nav-dibujos{
+                  &:hover{
+                    --nav-color-hover: green;
+                    background-color: var(--nav-color-hover);
+                  }
+                }
+                .nav-eventos{
+                  &:hover{
+                    --nav-color-hover: lightblue;
+                    background-color: var(--nav-color-hover);
+                  }
+                }
+                .nav-noticias{
+                  &:hover{
+                    --nav-color-hover: blue;
+                    background-color: var(--nav-color-hover);
+                  }
                 }
             }
         }
@@ -120,6 +166,9 @@ body{
                     width: 140px;
                     height: 140px;
                 }
+                &:hover{
+                    box-shadow: 0 0 15px greenyellow;
+                  }
 
                 .tipos{
                     display: flex;
