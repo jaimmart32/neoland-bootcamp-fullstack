@@ -88,7 +88,7 @@ function buscarHabilidades(event){
                 if(!response.ok){
                     throw Error("No se encontró el Pokemon, lo siento.")
                 }
-                response.json()})
+                return response.json()})
             .then(data => {
                 let  movimientos = data.moves.map(move => move.move.name);
                 console.log(movimientos);
